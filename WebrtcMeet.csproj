@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>WebrtcMeet</AssemblyName>
+    <RootNamespace>WebrtcMeet</RootNamespace>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Offline speech-to-text with whisper.cpp -->
+    <PackageReference Include="Whisper.net" Version="1.8.1" />
+    <PackageReference Include="Whisper.net.Runtime" Version="1.8.1" />
+    <!-- Optional NVIDIA acceleration:
+    <PackageReference Include="Whisper.net.Runtime.Cuda" Version="1.8.1" /> -->
+
+    <!-- Small embedded database: no server/database installation required. -->
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="static\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <None Include=".env" CopyToOutputDirectory="PreserveNewest" Condition="Exists('.env')" />
+  </ItemGroup>
+
+</Project>

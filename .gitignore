@@ -1,0 +1,34 @@
+# ---- Secrets (NEVER commit) ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---- App runtime data (DB, recordings, transcripts, Whisper models) ----
+data/
+*.db
+*.db-wal
+*.db-shm
+*.bin
+*.webm
+*.wav
+
+# ---- .NET build output ----
+bin/
+obj/
+publish/
+*.dll
+*.pdb
+*.user
+*.suo
+.vs/
+*.log
+TestResults/
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
